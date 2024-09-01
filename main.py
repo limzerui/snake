@@ -20,9 +20,10 @@ def calculate_weightage(student, school):
 
 def allocate_students(input_data):
     schools = input_data['schools']
+    print(f"{schools}")
     students = input_data['students']
+    print(f"{students}")
 
-    # Initialize a dictionary to store the student scores for each school
     school_scores = defaultdict(list)
 
     # Calculate weightage for each student for each school
@@ -31,7 +32,6 @@ def allocate_students(input_data):
             score = calculate_weightage(student, school)
             school_scores[school['name']].append((score, student['id']))
 
-    # Sort the students for each school based on score (descending) and student id (ascending)
     school_allocation = defaultdict(list)
     for school in schools:
         name = school['name']
